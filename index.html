@@ -1,44 +1,152 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>João Costa | Desenvolvedor</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Costa Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <img src="perfil.jpg" alt="Foto de perfil" class="perfil" />
-    <h1>João Costa</h1>
-    <p>Desenvolvedor Web | Criativo | Explorador Digital</p>
-  </header>
 
-  <section id="sobre">
-    <h2>Sobre mim</h2>
-    <p>
-      Sou um entusiasta da tecnologia com paixão por criar experiências digitais simples, úteis e impactantes.
-      Gosto de aprender, partilhar e trabalhar em projetos desafiadores.
-    </p>
-  </section>
+    <div class="main-container">
+        <header class="header">
+            <div class="welcome-section header-card">
+                <p class="label">welcome</p>
+                <h1>Hello, my name is <span class="highlight">João Costa</span> and I'm a beginner Software Engineer.</h1>
+                <p>Feel free to contact me if you have any project in mind, or simply to say hello.</p>
 
-  <section id="projetos">
-    <h2>Projetos</h2>
-    <ul>
-      <li><strong>Portfolio Web</strong> – Site pessoal com HTML/CSS</li>
-      <li><strong>App de Tarefas</strong> – Lista de tarefas com JavaScript</li>
-      <li><strong>Jogo da Velha</strong> – Jogo interativo para 2 jogadores</li>
-    </ul>
-  </section>
+            </div>
+            <div class="avatar-section">
+                
+            </div>
+            <div class="about-section header-card">
+                <h2>About me</h2>
+                <p>I'm a front-end and software developer. My main tools include:</p>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>MySql</li>
+                    <li>PHP</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>C#</li>
+                </ul>
+                <p>Besides programming, I love sports, music, movies/TV shows and, most of all, having fun.</p>
+            </div>
+        </header>
 
-  <section id="contacto">
-    <h2>Contacto</h2>
-    <p>📧 <a href="mailto:joao@email.com">joao@email.com</a></p>
-    <p>🔗 <a href="https://www.linkedin.com/in/joaocosta" target="_blank">LinkedIn</a></p>
-    <p>💻 <a href="https://github.com/joaocosta" target="_blank">GitHub</a></p>
-  </section>
+        <main class="grid-container">
+            <div class="grid-item contact">
+                <h2>Let's work together!</h2>
+                <p class="label">Contact Details</p>
+                <p>carlosjoao20060407@gmail.com<br>Portugal</p>
+                <p class="label">Socials</p>
+                <a href="#">Instagram</a>
+                <a href="#">Github</a>
+            </div>
 
-  <footer>
-    <p>&copy; 2025 João Costa. Todos os direitos reservados.</p>
-  </footer>
+            <div class="grid-item clock-box">
+                <span id="current-time">--:-- --</span>
+            </div>
+
+            <div class="grid-item design-works">
+                <a href="#" class="projects-link">
+                    <h3>Next Disappointment</h3>
+                    <div id="resultado">
+                        <div>
+                        <img src="images/next_game.png" alt="home logo" style="margin-left:40px; width:90%;">
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="grid-item now">
+                <p class="label">Now <span class="live-dot"></span></p>
+                <p>I'm a student at FEUP</p>
+            </div>
+
+            <div class="grid-item projects-and-more">
+                <a href="#" class="projects-link">
+                    <h3>Favorite song atm</h3>
+                </a>
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0tg48LaufDT970brtDd7Pg?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+            </div>
+
+            <div class="grid-item countries">
+                 <a href="#">
+                    <span>Projects</span>
+                    <span class="arrow">↗</span>
+                </a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <div class="color-picker">
+                <button class="color-dot" style="background-color: #ff4d4d;" data-color="#ff4d4d"></button>
+                <button class="color-dot" style="background-color: #ff9a4d;" data-color="#ff9a4d"></button>
+                <button class="color-dot" style="background-color: #4d94ff;" data-color="#4d94ff"></button>
+                <button class="color-dot" style="background-color: #8c4dff;" data-color="#8c4dff"></button>
+                <button class="color-dot" style="background-color: #4dff88;" data-color="#4dff88"></button>
+            </div>
+            <p>© 2025 - Done with ❤️ by me</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Função para buscar e exibir o próximo jogo - <div style="margin-right:25px;">17/08/2025, 16:30</div>
+        /*async function fetchNextMatch() {
+        const resultadoDiv = document.getElementById('resultado');
+        resultadoDiv.innerText = 'A carregar...'; // Indicador de carregamento simples
+
+        try {
+            const res = await fetch('/api/last-match'); // O endpoint no servidor permanece o mesmo
+            if (!res.ok) {
+            const errorData = await res.json();
+            throw new Error(errorData.error || `Erro HTTP: ${res.status}`);
+            }
+            const game = await res.json();
+
+            // Obtém o nome e o URL do emblema de ambas as equipas
+            const homeName = game.homeTeam.name;
+            const homeCrest = game.homeTeam.crest;
+            const awayName = game.awayTeam.name;
+            const awayCrest = game.awayTeam.crest;
+
+            const data = new Date(game.utcDate).toLocaleDateString('en-UK', {
+            year: 'numeric',
+            month: 'numeric',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+            });
+
+            // Adapta a exibição para mostrar emblemas, mantendo a estrutura simples
+            resultadoDiv.innerHTML = `
+            <div style="margin-right:25px;">${data}</div>
+            <div style="margin-top:10%;">
+            <img src="${homeCrest}" alt="${homeName} logo" style="width: 40px; height: 40px; vertical-align: middle;">
+            vs
+            <img src="${awayCrest}" alt="${awayName} logo" style="width: 40px; height: 40px; vertical-align: middle;">
+            </div>
+            `;
+            // Ajustei o estilo das imagens com 'style' inline para manter a simplicidade sem Tailwind.
+            // 'vertical-align: middle;' ajuda a alinhar o emblema com o texto 'vs'.
+
+        } catch (error) {
+            console.error('Erro ao buscar o próximo jogo:', error);
+            resultadoDiv.innerText = 'Erro ao carregar o próximo jogo.';
+        }
+        }
+
+        // Chama a função quando a página é carregada
+        document.addEventListener('DOMContentLoaded', fetchNextMatch);*/
+    </script>
 </body>
 </html>
